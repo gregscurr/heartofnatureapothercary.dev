@@ -1,0 +1,507 @@
+
+/* ! Social icons ------------------------------------- */  
+$social-layout: horizontal;
+@import "social/*.png";
+$social-sprite-dimensions: true;
+@include all-social-sprites;
+ 
+
+
+// layout ----------------------------------------
+
+
+.layout {
+	@include layout($susy);
+	padding: 0 3%; 
+}
+#main-content {
+	@include clearfix;
+}
+
+// header ----------------------------------------
+// @include breakpoint($tiny) {
+	.util-bar {
+		display: none;
+		.socialmediaicons {
+			display: hidden;
+			.signup	{
+				display: none;
+				h6 {
+					display: none;
+				}
+			}
+		}
+		.cart{
+			a {
+				.cart-icon {
+					display: none;
+				}
+			}
+		}	
+	}  // utility bar
+
+
+	.banner { 
+		@include container;
+		// @include background-image(linear-gradient(white, white 30%, darken(white, 10) 70%, darken(white, 20)));
+		// max-height: 15rem;
+		background: transparent;
+		a img{
+				// margin-bottom: -0.5rem;
+			}
+
+		h1{
+			display: none;
+			position: absolute;
+			top: -999em;
+		}
+
+	} // banner
+// }// breakpoint -----------
+
+// navigation ------------------------------------
+
+
+#main-nav {
+	@include span(12 center);
+	@include background-image(linear-gradient(top, darken($green, 40), $green));
+	border-bottom: 1px solid $yellow;
+	// margin-bottom: 30px;
+	.layout {
+		text-align: center;
+		.nav {
+			@include breakpoint($small) {
+				@include horizontal-list;
+			}/*/mediaquery*/
+
+			
+		} // ul.nav
+		.nav {
+			@include container;
+			display: inline-block;
+			li {
+				padding-top: 5px;
+			// 	margin: 0 auto;
+			// 	// i {
+			// 	// 	color: lighten($yellow, 5);
+			// 	// 	padding-right: .5em; 
+			// 	// } //icon
+				a{
+					// @include single-transition(all, .3s, ease-out);
+					display: inline-block;
+					text-decoration: none;				
+					padding: 5px  10px; 
+					color: $yellow;
+					@include border-radius();
+					margin: 0 auto;
+					// &:link {
+					// 	background: inherit;
+					// }
+
+					&:visited ,&:hover {
+						background: lighten($purple, 10);
+						border: 1px solid $green;
+						padding: 4px 9px;
+						color: $yellow;
+						@include text-shadow($blue 1px 1px);						
+					} // a hover
+					// &.active {
+					// 	background: lighten($orange, 10);
+					// 	border: 1px solid $green;
+					// 	padding: 4px 9px;
+					// 	color: $yellow;
+					// 	@include text-shadow($blue 1px 1px);
+					// }				 
+				} // a
+			} // li
+
+		}
+	} // layout	
+} // main navigation
+// content ---------------------------------------
+
+#main-content {
+	clear: both;
+	.layout {
+		position: relative;
+	}
+}
+
+@include breakpoint($desktop) {
+	
+		.wrapper {
+			@include layout(12 1/4 center after);
+			width: 80%;
+			margin: auto;
+			display: block;
+			position: relative;
+			@include background-image(linear-gradient(top, $paleryellow, lighten($green, 50)));
+			border-right: 1px solid $lightgray;
+			&:before {
+			  box-shadow: -15px 0 15px -15px inset;
+			  content: " ";
+			  height: 100%;
+			  left: -15px;
+			  position: absolute;
+			  top: 0;
+			  width: 15px;
+			} 
+			&:after {
+			  box-shadow: -15px 0 15px -15px inset;
+			  content: " ";
+			  height: 100%;
+			  left: -15px;
+			  position: absolute;
+			  top: 0;
+			  width: 15px;
+			}
+		}
+
+}/*/mediaquery*/
+
+// all in one slider----------------------------------------------------------------
+.allinone_bannerRotator {
+	// @include border-radius(20px);
+	// border: 5px solid $green;
+	// @include box-shadow($darkerblue -3px 5px 10px);
+}
+.all-banner {
+	width: 80%;
+	height: auto; 
+	margin: 30px auto;
+	background: $green; 
+	// clear: both;
+
+}
+
+.all-banner {
+	@include clearfix;
+	position: relative;
+	// @include container();
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 0;
+	#bannerBg {
+		width: 100%; 
+		height: auto;
+		overflow: hidden;
+		// @include border-radius(20px);
+		border: 10px solid $green;
+		#containingDiv {
+			overflow: hidden;
+			// @include border-radius(18px);
+			// border: 2px solid $green;
+		} //containingDiv
+	} // bannerBg
+	@include breakpoint($desktop) {
+		@include clearfix;
+		// @include pad(1,1);
+	}
+} 
+
+
+
+
+
+
+// Primary -----------------------------------file:///C:/Users/greg/Documents/Websites/www.heartofnatureapothecary.dev/index.html#
+
+// article {
+//     text-align: center;
+//     @include container(70%);
+//     @include breakpoint($small) {
+//       @include container(33em);
+//       padding: 60px 0;
+//     } //breakpoint
+//   } //article
+
+.primary {
+	article {
+		h2 {
+			margin-bottom: 10px;
+			padding-bottom: 2%;
+			a {
+								
+			}
+			a.bg-btn {
+				@include border-radius();
+				background: lighten($green, 20);
+				// color: lighten($blue, 20);
+				padding: 5px 10px;
+				border: 1px solid $green;
+				&:hover {
+					@include border-radius();
+					background: $green;
+					color: $blue;
+					padding: 5px 10px;
+					border: 1px solid darken($green, 15);
+				}
+				&:active {
+
+					background: lighten($orange, 10);
+					color: $yellow;
+					@include text-shadow(darken($green,15) 1px 1px);
+				}
+			}	
+		
+
+		}
+		
+		
+	}
+	.product-service {
+		@include container();
+		position: relative;
+		text-align: center;
+		border-bottom: 1px solid $green;
+		padding-bottom: 20px;
+	
+		figure.revealer {
+			position:relative;
+		    overflow:hidden;
+		    @include border-radius(20px);
+    		border: 2px solid darken($green, 15);
+		    
+			img{
+				display:block;
+	    		 @include border-radius(18px);
+	    		overflow: hidden;
+	    		padding-left: 0;
+			}		
+			figcaption {
+			   position:absolute;
+			   left:-999999em;
+			   width:100%;
+			   padding:10px;
+			   bottom:0;
+			   background-color:rgb(255,255,255);
+			   background-color:rgba(lighten($yellow, 20),0.8);
+			   p {
+			   	margin-bottom: 0;
+			   	color: $dark;
+			   	font-size: 14px;
+			   	margin: 0;
+			   		&:nth-child(3) {
+			   			color: $orange;
+			   		}
+			   }
+			   
+				   
+			}
+				&:hover {
+					figcaption{
+				    left:0;
+					}
+				}
+			
+		}
+
+		a {
+			figure.revealer {
+
+				figcaption{
+					&:hover {
+					    h6{
+						    color:darken($blue, 10);
+						   	margin: 0;
+					    }
+					    p {
+						   	color: $dark;
+						   	font-size: 14px;
+						   	margin: 0;
+						   	&:nth-child(3) {
+						   		color: $orange;
+						   	}
+						}							
+				    }
+			  	
+				   	.primary-btn-enter {
+					   	position: relative;
+					   	width: 33.33333%;
+					   	margin: 0 auto;
+					   	@include background-image(linear-gradient(bottom, darken($green, 30), lighten($green, 40)));
+				   		text-align: center;
+					   	padding: 2px 5px;
+					   	@include border-radius(5px);
+					   	z-index: 1000; 
+					   	&:hover{
+					   		@include background-image(linear-gradient(top, darken($green, 30), lighten($green, 40)));
+					   		text-align: center;
+						   	padding: 2px 5px;
+						   	@include border-radius(5px);
+						   	z-index: 1000;				   	 
+				   		}
+				   }					
+				}
+			}
+		}
+		#our-beliefs {
+			@include span(full);
+			margin: 20px 0;
+			h1 {
+				border-bottom: 1px solid;
+				padding-bottom: 20px;
+			}
+		}
+
+	}
+	@include breakpoint(680px, $tablet) {
+		.product-service {
+			@include container(2);
+			text-align: center;
+			margin: 0;
+			.info {
+				@include span(1 of 2 1/8 nested inside);
+			}
+		}
+	}/*/mediaquery*/
+
+	@include breakpoint($desktop) {
+	// 	// @include clearfix;
+	// 	// @include backImage("../images/content/prod-bg-dtop.jpg");
+	// 	// background-size: 100%;
+	// 	// background-repeat: no-repeat;
+	// 	@include border-radius();
+	// 	border: 2px solid $green;
+	// 	padding-bottom: 20px;
+		
+	}
+
+	@include breakpoint(1300px, $large) {
+		.product-service {
+			@include container(3);
+			margin: 0 0 20px 0;
+			padding-bottom: 2%;
+			// article {
+				.info {
+					@include span(1 of 3 1/8 nested inside);
+					padding-bottom: 20px;
+					// &:nth-child(4) {
+					// 	@include span(full);
+					// 	@include pad(4,4);
+					// 	background-color: transparent;						
+					// }
+				}
+				#our-beliefs {
+					@include span(2 at 2 of 3);
+					margin-top: 5%;
+					padding: 20px 10px 20px 10px;
+					@include border-radius(20px);
+					border: 2px solid $green;
+				}
+				// #other-services {
+				// 	@include span(1);
+				// 	// @include pad(4,4);
+				// 	padding-bottom: 20px;
+				// }
+			// }
+			// .herbal-teas {
+			// 	@include span (1 of 3 nested inside);
+			// }
+			// .tonics {
+			// 	@include span (1 of 3 nested inside);
+			// }
+			// .meet-dk {
+			// 	@include span (1 of 3 nested inside);
+			// }
+			// .herbal-teas, .tonics, .meet-dk {
+			// 	float: left;
+			// 	margin: 0;
+			// }
+		
+		}
+	}/*/mediaquery*/
+} // primary
+// .info {
+// 	@include container();
+// 	background: $light;
+// 	}
+
+
+
+
+
+
+// Secondary ---------------------------------
+
+aside {
+	@include container();
+	@include clearfix;
+	overflow: hidden;
+	@include breakpoint($desktop) {
+		@include container(3);
+		.info {
+			@include span(1 of 3 1/8 inside nested);
+			@include horizontal-list;
+			float: left;
+			border-left: 1px solid $green;
+			padding-left: 20px;
+			margin-top: 20px;
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+// Speakers list --------------------------------
+
+
+		
+
+// footer ---------------------------------------
+footer{
+	@include clearfix;
+	color:$darkblue;
+	background: $green;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	overflow: none;
+	@include box-shadow($darkerblue -3px 5px 10px);
+	.social-links {
+		li { 
+			list-style: none;
+			padding-left: 5px;
+			padding-right: 5px;
+			&:first-child {
+	    		padding-top: 10px;
+			}
+			&:last-child {
+	    		padding-bottom: 10px;
+			}
+			a {
+				display: block;
+			}			
+				
+		} // li 
+	} // social-links
+	@include breakpoint($tablet) {
+		.layout {
+			@include container(3);
+			.socialmediaicons,.links,.contact{
+				@include span(1 of 3 inside nested);
+				border-left: 1px solid;
+				margin-top: 20px;
+				h2 {
+					text-decoration: underline;
+				}
+			}
+			.socialmediaicons {
+				border-left: none;
+			}
+		}
+		.copyright {
+			text-align: center;
+		}
+		
+
+	}
+} // footer
+

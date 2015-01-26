@@ -1,0 +1,170 @@
+/* ! Modules CSS */
+
+
+// Social media tablet----------------------------------------
+ 
+
+@include breakpoint($small) {
+	.util-bar {
+		@include full;
+		@include box-shadow($darkerblue -2px 5px 10px);
+		max-height: 40px;
+		display: inline;
+		background-color: $green;
+		padding-top: 5px;
+		padding-bottom: 3px;
+
+		.socialmediaicons { 
+			@include horizontal-list;
+			@include span(11 at 0 of 12 .5 inside nest);
+			// border: 1px solid;	
+
+			.social-links { 
+				@include span(4 at 0 of 11 1/4 nest inside);
+				@include horizontal-list;
+				// ul {
+					li { 
+						list-style: none;
+					&:first-child {
+			    		padding-left: 5px;
+					}
+					&:last-child {
+			    		padding-right: 5px;
+					}
+						
+						a{
+							display: inline-block;
+							// border: 1px solid;
+						
+
+						} // a
+					} // li 
+				// }
+				
+			} // social-links
+
+			.signup {
+				@include span(7 at 4 of 11 1/4 nest inside);
+				display: inline-block;
+				
+				
+				input {
+					@include border-radius(10px);
+					.btn{
+						background: darken($green, 3);
+						// color: $green;
+						// font-size: .6rem; 
+					}
+				}
+				input, textarea, keygen, select, button {
+					text-align: center;
+				}
+			} // signup			
+		}  // socialmediaicons
+		.cart{
+			@include span(last 1 of 12 1/4 inside);
+			a {
+				display: inline-block;
+				img {
+					display: inline-block !important;				
+					// position: relative;
+					float: right;
+					width: 80%;			
+				}	
+			}	
+		}				
+	} //util bar
+} /*/mediaquery*/
+
+// Social media desktop ----------------------------------------
+
+@include breakpoint($desktop){
+	.util-bar {	
+			.socialmediaicons { 
+				@include horizontal-list;
+				width: span(10 at 0 of 12 0);
+				
+				.social-links { 
+					li { list-style: none;
+						// a{
+						// 	display: inline-block;
+
+						// } //a 
+					} // li 
+					.signup {
+						padding-left:5px;	
+					}  // signup
+				} // social-links
+
+			} // socialmediaicons
+	}  // util-bar
+		
+} /*/mediaquery*/
+
+
+// banner and logo -------------------------------------------
+
+// @include breakpoint($small) {
+// 	.banner{ 
+// 		.logo{
+// 			// width: span(10 at 1 0f 12);
+// 			// border: 1px solid black;
+// 			max-width: 760px;
+// 			height: auto;			
+// 		} // logo
+// 	} // banner
+// } //breakpoint small banner
+
+@include breakpoint($tablet) {
+	.banner{
+		
+		.logo{
+			max-height: 300px;
+
+			} // logo
+	} // banner
+} /*/mediaquery*/
+
+@include breakpoint($desktop) {
+	body{
+		background: // url("../images/dtop-bg-heart.png") 5px 2px no-repeat,
+		// 			url("../images/dtop-bg-heart.png") 100% 5px no-repeat,
+				    url("../images/logo/hona-bg-footer.jpg") repeat;
+
+	}
+
+	.banner{
+		// background-image: url("../images/logo/hona-bg-header.jpg");
+		// @include background-size(stretch);
+		.logo{
+			position: relative;
+			width: 100%;
+			margin-bottom: -10px;
+			// margin-left: 10%;
+			// margin: 1rem 10% 0 10%;
+			// margin-top: 1rem;
+			// border: 1px solid $paleryellow;
+			// @include border-radius(10px);
+
+		} // logo
+	} // banner
+} /*/mediaquery*/
+// @include breakpoint($large) {
+// 	body {
+// 		@include background(image-url('logo/hona-bg.jpg'));
+// 		background-repeat: no-repeat;
+// 		background-position: center center;
+// 		-webkit-background-size: cover;
+// 		-moz-background-size: cover;
+// 		-o-background-size:cover;
+// 		background-size: cover;	
+// 		margin: 0 auto;
+// 	}
+// 	// header{
+// 	.banner {
+// 		background: transparent;
+// 	} // banner
+// 	// }
+// } //breakpoint large banner
+
+ 

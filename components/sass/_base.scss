@@ -1,0 +1,115 @@
+// susy setup-------------------------------------
+// @import "susy"; 
+// @import "breakpoint";
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700|EB+Garamond|Droid+Serif);
+@import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
+
+// susy set up --------------------------------------------------------------------
+
+$susy: (
+  flow: ltr, // ltr | rtl
+  output: float, // float | isolate
+  math: fluid, // fluid | static (requires column-width)
+  column-width: false, // false | value
+  container: auto, // length or % | auto
+  container-position: center, // left | center | right | <length> [*2] (grid padding)
+  last-flow: to,
+  columns: 12,
+  gutters: 1/4,
+  gutter-position: inside, // before | after | split | inside | inside-static (requires column-width)
+  global-box-sizing: border-box, // content-box | border-box (affects inside/inside-static)
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background, // background | overlay
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true, // look for background-image mixin
+    background-options: false, // look for background-size, -origin and -clip and other compass/bourbon mixins
+    box-sizing: true, // look for custom bix sizing mixin
+    clearfix: false, // true = look for internal clearfix before using micro clearfix
+    rem: true, // look for rem mixin
+  )
+);
+
+// Breakpoints -------------------------------------
+$tiny: 479px;
+$small: 505px;
+$tablet: 760px;
+$desktop: 960px;
+$large: 1200px;
+
+
+/* ! Box-sizing ------------------------------------- */
+@include border-box-sizing; 
+
+/* ! Base settings ------------------------------------- */
+
+img{
+	width: 100%;
+	height: auto;
+}
+
+
+//@include layout(12 1/4 static float inside);
+body {
+	@include layout($susy);
+	font-family: $font-primary;
+	font-size: 0.9rem;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	line-height: 150%;
+	background: $paleryellow;
+	color: $darkblue;
+}
+
+
+#{headings()} {
+	font-family: $font-secondary;
+	font-weight: 700;
+	// line-height: 100%;
+	color: $darkgray;
+	@include text-shadow($paleryellow 1px 1px);
+}
+
+h1 {
+	font-size: 2.2rem;
+	line-height: 2rem;
+	color: lighten($darkblue, 25);
+	margin-bottom: .4rem;
+	// border-bottom: 1px solid $lightgray;
+	padding-top: 10px;
+}
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 100%;
+	margin: 20px  0  0  0;
+	color: lighten($darkblue, 25);
+    text-decoration: none;
+} 
+
+h3 {
+	font-size: 1.8rem;
+	line-height: 60%;
+	color: $orange;
+}
+
+
+
+a {
+	color: darken($green, 15); 
+	text-decoration: none; 
+	line-height: inherit;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+.small {
+	font-size: 1rem;
+	color: $blue;
+}
