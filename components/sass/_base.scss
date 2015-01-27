@@ -1,12 +1,12 @@
 // susy setup-------------------------------------
-// @import "susy"; 
-// @import "breakpoint";
+@import "susy"; 
+@import "breakpoint";
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700|EB+Garamond|Droid+Serif);
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
 // susy set up --------------------------------------------------------------------
 
-$susy: (
+$susy: ( 
   flow: ltr, // ltr | rtl
   output: float, // float | isolate
   math: fluid, // fluid | static (requires column-width)

@@ -119,26 +119,26 @@ h2 {
   text-decoration: none;
 }
 
-/* line 93, ../components/sass/_base.scss */
+/* line 94, ../components/sass/_base.scss */
 h3 {
   font-size: 1.8rem;
   line-height: 60%;
   color: #BD3613;
 }
 
-/* line 101, ../components/sass/_base.scss */
+/* line 102, ../components/sass/_base.scss */
 a {
   color: #7fa668;
   text-decoration: none;
   line-height: inherit;
 }
 
-/* line 107, ../components/sass/_base.scss */
+/* line 108, ../components/sass/_base.scss */
 p {
   margin-bottom: 10px;
 }
 
-/* line 111, ../components/sass/_base.scss */
+/* line 112, ../components/sass/_base.scss */
 .small {
   font-size: 1rem;
   color: #2176C7;
